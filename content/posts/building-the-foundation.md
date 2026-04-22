@@ -11,7 +11,7 @@ showToc = true
 tocopen = false
 +++
 
-## The Goal
+## The Goal:
 
 Get JesseBentley.com live with a proper automated deployment pipeline. Not the quick path but the right path. Every push to GitHub should automatically build and deploy the site without me touching anything manually.
 

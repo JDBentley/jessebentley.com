@@ -11,7 +11,7 @@ showToc = true
 tocopen = false
 +++
 
-## The Goal
+## The Goal:
 
 What are you trying to accomplish in this session? What does success look like?
 
