@@ -127,6 +127,10 @@ This blog is where I document what I'm building and learning in real time. The w
 
 ## Connect
 
+## Connect
+
 → [GitHub](https://github.com/JDBentley)
 
 → [LinkedIn](https://www.linkedin.com/in/jesse-bentley/)
+
+→ [Email](mailto:jesse@jessebentley.com)
