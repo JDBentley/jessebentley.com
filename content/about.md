@@ -2,31 +2,51 @@
 date = '2026-04-21T22:36:42-04:00'
 draft = false
 title = 'About'
-description = 'Senior IT Professional and Army veteran documenting a transition into offensive security and penetration testing.'
+description = 'Security professional and Army veteran documenting a transition into offensive security and penetration testing.'
 author = 'Jesse Bentley'
 showToc = false
 hideMeta = true
 +++
 
-I'm Jesse Bentley — a Senior IT Professional and Army veteran with 20 years of experience spanning military service, Fortune 500 environments, and everything in between.
+I'm a computer nerd who wants to know how everything works. Not theoretically. Actually hands on, taken apart, reassembled, broken and fixed again.
 
-My career has never followed a straight line. After serving in the Army I came out of the military and spent time as a diesel mechanic — where I noticed the shop had no inventory system, taught myself JavaScript and MySQL, and built one from scratch. That application ran the business until the company was sold.
+My troubleshooting methodology follows the same logic as physics start with the last known truth and build up from there. Not backwards from the error, not guessing at the middle. Find the last thing that's confirmed working and move forward until you hit the break. It sounds simple. Most people don't actually do it.
 
-That pattern of seeing a problem and building a solution has followed me ever since.
+That's still how I approach everything.
 
-Over the past two decades I've worked across the full stack of enterprise IT — building OS deployment pipelines with WINPE and Windows Configuration Manager, developing in ServiceNow, managing hardware vendor relationships at scale with HP and Dell, creating laptop imaging task sequences, and currently leading a team of 40 in hardware support and networking.
+---
 
-Now I'm making a deliberate move into offensive security and penetration testing — bringing something most junior pen testers don't have: 20 years of understanding how enterprise infrastructure is actually built, deployed, and maintained from the inside.
+I grew up in Surgoinsville, Tennessee. Less than 2,000 people. Your options were pretty much farming or trouble. I found trouble. Joined the military at 18 to keep myself out of jail or worse. Best decision I ever made.
 
-I've spent the last two years embedding myself in the security community, building relationships with practitioners at FR Secure, Black Lantern Security, Cobalt, and Next Gen Red Team, and learning directly from some of the most respected names in the field.
+Before any of that though I was 11 years old when The Sims launched. Fell in love with it immediately. Didn't love everything about how it worked so I started changing it. Not with mods modding wasn't really a thing yet. Just cracking open files, learning how things worked, and changing what I didn't like. A year later I built my sister a full website in HTML and JavaScript so she could sell her Sims skins online. I was 12. I didn't think of it as coding. I just wanted it to exist so I figured out how to make it happen.
 
-This blog documents that transition in real time — the tools I'm building from scratch, the skills I'm developing, the mistakes I'm making, and what I learn from them.
+---
+
+The Army gave me access to things I probably shouldn't have had access to. Networking, programming, SDR, classified systems it was the best technical education I could have gotten and I didn't fully appreciate it until I got out. I came out wanting to try something completely different so I went to work for my uncle. He had a shop and worked with Moore Freight Service, one of the largest glass haulers in the country at the time. I did DoT inspections, electrical work on trucks and trailers, metal fabrication, computer diagnostics on commercial vehicles. Completely different world.
+
+The shop ran everything on paper. Parts, work orders, inventory all of it tracked by hand. It was chaos. I didn't really know how to build software but I knew how to figure things out so I taught myself JavaScript and MySQL and built them a centralized inventory system. It ran the business until they sold the company. I haven't stopped building things since.
+
+That was the start of a 20 year IT career that's taken me through Fortune 500 companies, enterprise infrastructure at scale, Active Directory, Intune, mobile device management, industrial Android deployments in hazardous environments, ServiceNow development, OS deployment pipelines, and currently leading a team of 16 in hardware support and networking.
+
+---
+
+My typical day right now: up at 5am, at work by 7, emails, check my monitoring queues, meetings, troubleshoot whatever my teams escalate. Home by 4:40. Dogs out. Annoy the girlfriend. Then I work on projects until I pass out around 7pm. Back up at 11pm. Projects or studying until 2am. Sleep until 5. Repeat.
+
+I'm not telling you that to sound impressive. I'm telling you because if you're reading this blog wondering whether I'm serious about this transition that's your answer.
+
+---
+
+Pen testing makes sense as the destination because it lets me take everything I've learned across every domain technical and non technical, military and civilian, enterprise IT and diesel mechanics and turn it into something genuinely useful. I've spent 20 years learning how these systems are built. Understanding how they break feels like the natural next step.
+
+I've spent the last two years going to conferences, meeting people in the field, and building relationships with practitioners at FR Secure, Black Lantern Security, Cobalt, and Next Gen Red Team. The community has been generous. Now I'm trying to contribute something back to it.
+
+This blog is where I document what I'm building and learning in real time. The wins, the failures, the things that took way longer than they should have. If you're making a similar transition or just curious what it looks like from the inside stick around.
 
 ---
 
 ## Currently Building
 
-**Flipper Zero Physical Security Suite** — A complete hardware security toolkit programmed from scratch. WiFi device scanner, Sub-GHz analyzer, IR lens detector, NFC reader, and a Python companion app. Every line of code documented on this blog.
+**Flipper Zero Physical Security Suite** — A complete hardware security toolkit built from scratch. WiFi device scanner, Sub-GHz analyzer, IR lens detector, NFC reader, and a Python companion app. Every line of code written and documented on this blog.
 
 ---
 
@@ -43,19 +63,7 @@ This blog documents that transition in real time — the tools I'm building from
 | Mac enterprise integration | | |
 | iOS enterprise deployment | | |
 | ServiceNow development | | |
-| Team leadership (40+ engineers) | | |
-
----
-
-## Certifications
-
-| Completed | In Progress | Planned |
-|---|---|---|
-| CompTIA Security+ | PNPT | OSCP |
-| CompTIA Pentest+ | | |
-| CompTIA Network+ | | |
-| CompTIA Linux+ | | |
-| CompTIA Project+ | | |
+| Team leadership (16+ engineers) | | |
 
 ---
 
