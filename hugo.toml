@@ -30,6 +30,14 @@ buildFuture = false
     name = "github"
     url = "https://github.com/JDBentley"
 
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://www.linkedin.com/in/jesse-bentley/"
+
+  [[params.socialIcons]]
+      name = "email"
+      url = "mailto:jesse@jessebentley.com"
+
 [menu]
   [[menu.main]]
     identifier = "about"
