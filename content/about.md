@@ -8,9 +8,9 @@ showToc = false
 hideMeta = true
 +++
 
-I'm a computer nerd who wants to know how everything works. Not theoretically. Actually hands on, taken apart, reassembled, broken and fixed again.
+I'm a computer nerd who wants to know how everything works. Not theoretically: actually hands on, taken apart, reassembled, broken and fixed again.
 
-My troubleshooting methodology follows the same logic as physics start with the last known truth and build up from there. Not backwards from the error, not guessing at the middle. Find the last thing that's confirmed working and move forward until you hit the break. It sounds simple. Most people don't actually do it.
+My troubleshooting methodology follows the same logic as physics; start with the last known truth and build up from there. Not backwards from the error, not guessing at the middle. Find the last thing that's confirmed working and move forward until you hit the break. It sounds simple. Most people don't actually do it.
 
 That's still how I approach everything.
 
@@ -18,11 +18,11 @@ That's still how I approach everything.
 
 I grew up in Surgoinsville, Tennessee. Less than 2,000 people. Your options were pretty much farming or trouble. I found trouble. Joined the military at 18 to keep myself out of jail or worse. Best decision I ever made.
 
-Before any of that though I was 11 years old when The Sims launched. Fell in love with it immediately. Didn't love everything about how it worked so I started changing it. Not with mods modding wasn't really a thing yet. Just cracking open files, learning how things worked, and changing what I didn't like. A year later I built my sister a full website in HTML and JavaScript so she could sell her Sims skins online. I was 12. I didn't think of it as coding. I just wanted it to exist so I figured out how to make it happen.
+Before any of that though I was 11 years old when The Sims launched. Fell in love with it immediately. Didn't love everything about how it worked so I started changing it. Not with mods; modding wasn't really a thing yet. Just cracking open files, learning how things worked, and changing what I didn't like. A year later I built my sister a full website in HTML and JavaScript so she could sell her Sims skins online. I was 12. I didn't think of it as coding. I just wanted it to exist so I figured out how to make it happen.
 
 ---
 
-The Army gave me access to things I probably shouldn't have had access to. Networking, programming, SDR, classified systems it was the best technical education I could have gotten and I didn't fully appreciate it until I got out. I came out wanting to try something completely different so I went to work for my uncle. He had a shop and worked with Moore Freight Service, one of the largest glass haulers in the country at the time. I did DoT inspections, electrical work on trucks and trailers, metal fabrication, computer diagnostics on commercial vehicles. Completely different world.
+The Army gave me access to things I probably shouldn't have had access to. Networking, programming, SDR, classified systems - it was the best technical education I could have gotten and I didn't fully appreciate it until I got out. I came out wanting to try something completely different so I went to work for my uncle. He had a shop and worked with Moore Freight Service, one of the largest glass haulers in the country at the time. I did DoT inspections, electrical work on trucks and trailers, metal fabrication, computer diagnostics on commercial vehicles. Completely different world.
 
 The shop ran everything on paper. Parts, work orders, inventory all of it tracked by hand. It was chaos. I didn't really know how to build software but I knew how to figure things out so I taught myself JavaScript and MySQL and built them a centralized inventory system. It ran the business until they sold the company. I haven't stopped building things since.
 
