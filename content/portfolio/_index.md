@@ -43,7 +43,7 @@ A complete hardware security toolkit programmed from scratch in C, C++, and Pyth
 
 **Blog series:** [Flipper Zero Build](/series/flipper-zero-build/)
 
-**GitHub:** Coming soon
+**GitHub:** [flipper-zero-security-suite](https://github.com/JDBentley/flipper-zero-security-suite)
 
 ---
 
