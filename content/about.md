@@ -54,7 +54,7 @@ documented on this blog.
 
 **GameMaster AI** — A reinforcement learning system that teaches AI 
 agents to play Steam games from scratch. No Gymnasium, no Stable 
-Baselines — everything built by hand in Python and PyTorch. Currently 
+Baselines; everything built by hand in Python and PyTorch. Currently 
 training on idle and incremental games before moving to simulation and 
 eventually real time action games. Transfer learning experiments planned 
 across game genres.
@@ -142,6 +142,27 @@ across game genres.
 → Built and deployed a production inventory system from scratch
 
 → Application ran until the company was sold
+
+</details>
+
+---
+
+<details>
+<summary><strong>AI & Machine Learning Research</strong></summary>
+
+→ Building GameMaster AI — a reinforcement learning system trained
+  to play Steam games from scratch using Python and PyTorch
+
+→ No frameworks used — every component built by hand to ensure
+  complete understanding of the underlying systems
+
+→ Implementing transfer learning experiments across game genres
+  to measure knowledge retention and negative transfer effects
+
+→ Integrating LLM program synthesis via Anthropic API for
+  autonomous agent loop development
+
+→ Targeting conference talks at BSides, Hack Space Con, and Hack Red Con in 2027
 
 </details>
 
