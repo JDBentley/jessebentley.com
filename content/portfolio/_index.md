@@ -6,6 +6,7 @@ description = 'Projects built from scratch and documented in real time.'
 author = 'Jesse Bentley'
 showToc = false
 hideMeta = true
+outputs = ['HTML']
 +++
 
 A collection of projects built from scratch and documented honestly on this blog. Every line of code written, every mistake made, and every problem solved is recorded in the corresponding blog series.
