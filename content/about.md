@@ -6,6 +6,7 @@ description = 'Security professional and Army veteran documenting a transition i
 author = 'Jesse Bentley'
 showToc = false
 hideMeta = true
+outputs = ['HTML']
 +++
 
 I'm a computer nerd who wants to know how everything works. Not theoretically: actually hands on, taken apart, reassembled, broken and fixed again.

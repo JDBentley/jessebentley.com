@@ -90,7 +90,7 @@ A reinforcement learning system that teaches AI agents to play Steam games from 
 
 **Blog series:** [GameMaster AI](/series/gamemaster-ai/)
 
-**GitHub:** Coming soon
+**GitHub:** [gamemaster-ai](https://github.com/JDBentley/gamemaster-ai)
 
 </details>
 
@@ -105,11 +105,12 @@ Target 2027:
 
 - BSides Nashville
 
+- BSides Charleston
+
 - HackSpace Con
 
 - Hack Red Con
 
-- BSides Charleston
 
 ## Open Source
 
