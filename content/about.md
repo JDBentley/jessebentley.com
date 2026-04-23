@@ -74,7 +74,7 @@ across game genres.
 | Mac enterprise integration | | Hugo (static site generation) |
 | iOS enterprise deployment | | Git / GitHub Actions (CI/CD) |
 | ServiceNow development | | |
-| Team leadership (40+ engineers) | | |
+| Team leadership (16+ engineers) | | |
 
 **AI & Machine Learning**
 
