@@ -24,8 +24,7 @@ buildFuture = false
 
   [params.homeInfoParams]
     Title = "Hi, I'm Jesse Bentley"
-    Content = "Security professional and Army veteran with 20 years in enterprise IT — documenting my transition into offensive security and penetration testing. Currently building a Flipper Zero physical security suite from scratch."
-
+    Content = "Security professional and Army veteran with 20 years in enterprise IT — documenting my transition into offensive security and penetration testing. Currently building a Flipper Zero physical security suite and GameMaster AI, a from-scratch reinforcement learning system that teaches AI agents to play Steam games using Python and PyTorch."
   [[params.socialIcons]]
     name = "github"
     url = "https://github.com/JDBentley"

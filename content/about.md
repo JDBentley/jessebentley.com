@@ -46,7 +46,18 @@ This blog is where I document what I'm building and learning in real time. The w
 
 ## Currently Building
 
-**Flipper Zero Physical Security Suite** — A complete hardware security toolkit built from scratch. WiFi device scanner, Sub-GHz analyzer, IR lens detector, NFC reader, and a Python companion app. Every line of code written and documented on this blog.
+**Flipper Zero Physical Security Suite** — A complete hardware security 
+toolkit programmed from scratch. WiFi device scanner, Sub-GHz analyzer, 
+IR lens detector with ESP32-CAM, NFC reader, GPS location logging, and 
+a CrowPanel 3.5" LVGL touchscreen interface. Every line of code 
+documented on this blog.
+
+**GameMaster AI** — A reinforcement learning system that teaches AI 
+agents to play Steam games from scratch. No Gymnasium, no Stable 
+Baselines — everything built by hand in Python and PyTorch. Currently 
+training on idle and incremental games before moving to simulation and 
+eventually real time action games. Transfer learning experiments planned 
+across game genres.
 
 ---
 
@@ -56,14 +67,25 @@ This blog is where I document what I'm building and learning in real time. The w
 |---|---|---|
 | Network infrastructure | Physical security assessment | JavaScript & MySQL |
 | Hardware lifecycle management | RF and wireless analysis | C (Flipper Zero SDK) |
-| OS deployment (WINPE, SCCM) | Hardware hacking | Python (companion app) |
-| Active Directory enterprise | Penetration testing (in progress) | Arduino C++ (ESP32) |
-| Microsoft Intune & MDM | | |
-| Android enterprise & industrial scanners | | |
-| Mac enterprise integration | | |
-| iOS enterprise deployment | | |
+| OS deployment (WINPE, SCCM) | Hardware hacking | Python (RL systems, PyTorch) |
+| Active Directory enterprise | Penetration testing (in progress) | Arduino C++ (ESP32 firmware) |
+| Microsoft Intune & MDM | | LVGL (embedded UI) |
+| Android enterprise & industrial scanners | | Reinforcement learning (PyTorch) |
+| Mac enterprise integration | | Hugo (static site generation) |
+| iOS enterprise deployment | | Git / GitHub Actions (CI/CD) |
 | ServiceNow development | | |
-| Team leadership (16+ engineers) | | |
+| Team leadership (40+ engineers) | | |
+
+**AI & Machine Learning**
+
+| Concept | Implementation | Status |
+|---|---|---|
+| Reinforcement learning | Built from scratch in PyTorch | Active |
+| Neural network architecture | Custom policy networks | Active |
+| Computer vision / OCR | Screen state extraction | Active |
+| Transfer learning | Cross-game knowledge transfer | Planned |
+| LLM integration | Anthropic API for program synthesis | Planned |
+| Multi-agent systems | Self-play and cooperative agents | Roadmap |
 
 ---
 
