@@ -94,11 +94,11 @@ across game genres.
 <details>
 <summary><strong>Army Veteran</strong></summary>
 
-→ Military IT infrastructure and operations in high stakes environments
+- Military IT infrastructure and operations in high stakes environments
 
-→ Security clearance and trusted access to classified systems
+- Security clearance and trusted access to classified systems
 
-→ Discipline and documentation standards that carry through every project
+- Discipline and documentation standards that carry through every project
 
 </details>
 
@@ -107,15 +107,15 @@ across game genres.
 <details>
 <summary><strong>Fortune 500 Enterprise IT</strong></summary>
 
-→ Active Directory at enterprise scale
+- Active Directory at enterprise scale
 
-→ Full device lifecycle management
+- Full device lifecycle management
 
-→ Cross platform environment integration
+- Cross platform environment integration
 
-→ Vendor relationship management (HP, Dell, Microsoft)
+- Vendor relationship management (HP, Dell, Microsoft)
 
-→ ServiceNow platform development
+- ServiceNow platform development
 
 </details>
 
@@ -124,9 +124,9 @@ across game genres.
 <details>
 <summary><strong>Industrial and Specialized Environments</strong></summary>
 
-→ Android integration for industrial scanners and intrinsically safe devices in hazardous environments
+- Android integration for industrial scanners and intrinsically safe devices in hazardous environments
 
-→ OT adjacent device management bridging enterprise IT and operational technology
+- OT adjacent device management bridging enterprise IT and operational technology
 
 </details>
 
@@ -135,13 +135,13 @@ across game genres.
 <details>
 <summary><strong>Self Taught Development</strong></summary>
 
-→ Identified a business problem as a diesel mechanic
+- Identified a business problem as a diesel mechanic
 
-→ Taught myself JavaScript and MySQL
+- Taught myself JavaScript and MySQL
 
-→ Built and deployed a production inventory system from scratch
+- Built and deployed a production inventory system from scratch
 
-→ Application ran until the company was sold
+- Application ran until the company was sold
 
 </details>
 
@@ -150,19 +150,19 @@ across game genres.
 <details>
 <summary><strong>AI & Machine Learning Research</strong></summary>
 
-→ Building GameMaster AI — a reinforcement learning system trained
+- Building GameMaster AI — a reinforcement learning system trained
   to play Steam games from scratch using Python and PyTorch
 
-→ No frameworks used — every component built by hand to ensure
+- No frameworks used — every component built by hand to ensure
   complete understanding of the underlying systems
 
-→ Implementing transfer learning experiments across game genres
+- Implementing transfer learning experiments across game genres
   to measure knowledge retention and negative transfer effects
 
-→ Integrating LLM program synthesis via Anthropic API for
+- Integrating LLM program synthesis via Anthropic API for
   autonomous agent loop development
 
-→ Targeting conference talks at BSides, Hack Space Con, and Hack Red Con in 2027
+- Targeting conference talks at BSides, Hack Space Con, and Hack Red Con in 2027
 
 </details>
 
@@ -170,6 +170,6 @@ across game genres.
 
 ## Connect
 
-→ [GitHub](https://github.com/JDBentley)
-→ [LinkedIn](https://www.linkedin.com/in/jesse-bentley/)
-→ [Email](mailto:jesse@jessebentley.com)
+- [GitHub](https://github.com/JDBentley)
+- [LinkedIn](https://www.linkedin.com/in/jesse-bentley/)
+- [Email](mailto:jesse@jessebentley.com)
