@@ -1,5 +1,5 @@
 +++
-date = '2026-04-22T00:00:00-04:00'
+date = '2026-04-27T08:00:00-04:00'
 draft = false
 title = 'Deploying Hugo with GitHub Actions and Bluehost'
 description = 'How I built a proper automated deployment pipeline instead of taking the easy Netlify path — and what I learned along the way.'
