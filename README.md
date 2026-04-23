@@ -67,9 +67,9 @@ hugo server -D
 ```
 
 ## Blog Schedule
-Monday / Tuesday  → Flipper Zero build series
-Friday            → GameMaster AI series
-Bonus             → Conference recaps and community posts
+Monday / Tuesday  → Flipper Zero build series <br />
+Friday            → GameMaster AI series <br />
+Bonus             → Conference recaps and community posts<br />
 
 ## Connect
 
