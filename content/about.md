@@ -47,18 +47,24 @@ This blog is where I document what I'm building and learning in real time. The w
 
 ## Currently Building
 
-**Flipper Zero Physical Security Suite** — A complete hardware security 
-toolkit programmed from scratch. WiFi device scanner, Sub-GHz analyzer, 
-IR lens detector with ESP32-CAM, NFC reader, GPS location logging, and 
-a CrowPanel 3.5" LVGL touchscreen interface. Every line of code 
+**Flipper Zero Physical Security Suite** — A complete hardware security
+toolkit programmed from scratch. WiFi device scanner, Sub-GHz analyzer,
+IR lens detector with ESP32-CAM, NFC reader, GPS location logging, and
+a CrowPanel 3.5" LVGL touchscreen interface. Every line of code
 documented on this blog.
 
-**GameMaster AI** — A reinforcement learning system that teaches AI 
-agents to play Steam games from scratch. No Gymnasium, no Stable 
-Baselines; everything built by hand in Python and PyTorch. Currently 
-training on idle and incremental games before moving to simulation and 
-eventually real time action games. Transfer learning experiments planned 
-across game genres.
+[GitHub](https://github.com/JDBentley/flipper-zero-security-suite)
+
+---
+
+**GameMaster AI** — A reinforcement learning system that teaches AI
+agents to play Steam games from scratch. No Gymnasium, no Stable
+Baselines; everything built by hand in Python and PyTorch. Currently
+training on idle and incremental games before moving to simulation and
+eventually real time action games. Transfer learning experiments
+planned across game genres.
+
+[GitHub](https://github.com/JDBentley/gamemaster-ai)
 
 ---
 
