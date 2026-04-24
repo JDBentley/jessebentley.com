@@ -132,4 +132,4 @@ GitHub has a lot going on under the hood that you'd never discover just using it
 
 ## What's Next
 
-Next post covers Cloudflare — why a security professional should care about what sits in front of their personal site, how DNS routing works, and what the free tier actually gives you beyond just faster load times.
+Next post covers Cloudflare and why a security professional should care about what sits in front of their personal site, how DNS routing works, and what the free tier actually gives you beyond just faster load times.
