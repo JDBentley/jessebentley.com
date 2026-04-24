@@ -49,6 +49,16 @@ The full automated deployment pipeline of GitHub Actions, SSH, Cloudflare is the
 
 ---
 
+## GitHub
+
+Everything built in this post lives in the site repository.
+The Hugo configuration, PaperMod theme setup, and folder
+structure are all visible there:
+
+[jessebentley.com](https://github.com/JDBentley/jessebentley.com)
+
+---
+
 ## What's Next
 
 Setting up Cloudflare DNS, enabling SSH on Bluehost, and writing the GitHub Actions workflow that ties it all together. When that's done every push to GitHub deploys the site automatically. That post covers the full CI/CD pipeline from scratch.

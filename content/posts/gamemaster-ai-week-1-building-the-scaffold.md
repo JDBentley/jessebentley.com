@@ -101,6 +101,20 @@ Tooling is in place too. Ruff for linting, mypy in strict mode for type checking
 
 ---
 
+## GitHub
+
+The full project scaffold from this post is available in the repository:
+
+[gamemaster-ai](https://github.com/JDBentley/gamemaster-ai)
+
+Specific files referenced in this post:
+- `src/gamemaster/types.py` — core type definitions
+- `tests/test_types.py` — the 11 passing tests
+- `pyproject.toml` — build system and tooling configuration
+- `CHANGELOG.md` — session log
+
+---
+
 ## What's Next
 
 Week 2 is where the project starts actually talking to the outside world. We're building `connectors/base.py` — the abstract base that all four connector types will inherit from — and then the first real connector: `APIConnector`, which lets the agent communicate with Melvor Idle through its Chrome DevTools Protocol interface.

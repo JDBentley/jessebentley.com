@@ -35,6 +35,13 @@ Where did you land? Working solution, partial win, or still stuck? All three are
 
 ---
 
+## GitHub
+
+Link to the relevant repository and specific files mentioned
+in this post.
+
+---
+
 ## What's Next
 
 Two or three sentences on what you're tackling before the next post. This is your commitment in writing.
