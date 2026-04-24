@@ -170,6 +170,19 @@ Everything is committed to GitHub. The foundation for Phase 2 is ready.
 
 ---
 
+## GitHub
+
+The full Phase 1 code is available in the repository:
+
+[flipper-zero-security-suite](https://github.com/JDBentley/flipper-zero-security-suite)
+
+Specific files referenced in this post:
+- `apps/hello_world/hello_world.c` — the complete app source
+- `apps/hello_world/application.fam` — the app manifest
+- `apps/hello_world/images/` — image assets folder
+
+---
+
 ## What's Next
 
 Components arrive this weekend the ESP32-CAM, IR LEDs, NRF24L01,

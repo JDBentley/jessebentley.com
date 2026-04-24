@@ -130,6 +130,17 @@ GitHub has a lot going on under the hood that you'd never discover just using it
 
 ---
 
+## GitHub
+
+The workflow file discussed line by line in this post is in the repository:
+
+[jessebentley.com](https://github.com/JDBentley/jessebentley.com)
+
+Specific file referenced in this post:
+- `.github/workflows/deploy.yml` — the complete GitHub Actions workflow
+
+---
+
 ## What's Next
 
 Next post covers Cloudflare and why a security professional should care about what sits in front of their personal site, how DNS routing works, and what the free tier actually gives you beyond just faster load times.

@@ -118,6 +118,20 @@ and why. That's what matters.
 
 ---
 
+## GitHub
+
+The site repository shows the full Hugo configuration that
+Cloudflare serves:
+
+[jessebentley.com](https://github.com/JDBentley/jessebentley.com)
+
+Cloudflare configuration is managed through the Cloudflare
+dashboard directly — there are no config files to commit.
+The DNS records, email routing rules, and security settings
+all live in the Cloudflare UI.
+
+---
+
 ## What's Next
 
 The site infrastructure series is nearly wrapped up. Next post

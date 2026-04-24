@@ -51,6 +51,18 @@ That last part matters more than anything else. When something breaks at 2am I'l
 
 ---
 
+## GitHub
+
+The full deployment setup for this site is visible in the repository:
+
+[jessebentley.com](https://github.com/JDBentley/jessebentley.com)
+
+Specific files referenced in this post:
+- `.github/workflows/deploy.yml` — the full deployment workflow
+- `.ssh/` — SSH key setup (keys not committed — stored as GitHub secrets)
+
+---
+
 ## What's Next
 
 The site is live and deploying automatically but the pipeline itself deserves a deeper look. Next post breaks down the GitHub Actions workflow file line by line — what each step does, how the cron schedule works, and why CI/CD matters even for a personal blog.
