@@ -53,4 +53,4 @@ That last part matters more than anything else. When something breaks at 2am I'l
 
 ## What's Next
 
-The site infrastructure is done. Next post covers starting Phase 1 of the Flipper Zero build — setting up the development environment on a fresh Ubuntu install and writing the first lines of C for the Flipper SDK. Components arrive this weekend. The build starts then.
+The site is live and deploying automatically but the pipeline itself deserves a deeper look. Next post breaks down the GitHub Actions workflow file line by line — what each step does, how the cron schedule works, and why CI/CD matters even for a personal blog.
