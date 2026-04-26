@@ -117,4 +117,4 @@ Specific files referenced in this post:
 
 ## What's Next
 
-Week 2 is where the project starts actually talking to the outside world. We're building `connectors/base.py` — the abstract base that all four connector types will inherit from — and then the first real connector: `APIConnector`, which lets the agent communicate with Melvor Idle through its Chrome DevTools Protocol interface.
+Week 2 is where the project starts actually talking to the outside world. We're building `connectors/base.py` which is the abstract base that all four connector types will inherit from and then the first real connector: `APIConnector`, which lets the agent communicate with Melvor Idle through its Chrome DevTools Protocol interface.
