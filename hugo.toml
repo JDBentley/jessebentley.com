@@ -41,19 +41,19 @@ buildFuture = false
 [menu]
   [[menu.main]]
     identifier = "about"
-    name = "About"
+    name = "~/whoami"
     url = "/about/"
     weight = 10
 
   [[menu.main]]
     identifier = "blog"
-    name = "Blog"
+    name = "~/writeups"
     url = "/posts/"
     weight = 20
 
   [[menu.main]]
     identifier = "portfolio"
-    name = "Portfolio"
+    name = "~/projects"
     url = "/portfolio/"
     weight = 30
 
