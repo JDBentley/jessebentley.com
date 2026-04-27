@@ -76,12 +76,12 @@ planned across game genres.
 | Hardware lifecycle management | RF and wireless analysis | C (Flipper Zero SDK) |
 | OS deployment (WINPE, SCCM) | Hardware hacking | Python (RL systems, PyTorch) |
 | Active Directory enterprise | Penetration testing (in progress) | Arduino C++ (ESP32 firmware) |
-| Microsoft Intune & MDM | | LVGL (embedded UI) |
-| Android enterprise & industrial scanners | | Reinforcement learning (PyTorch) |
-| Mac enterprise integration | | Hugo (static site generation) |
-| iOS enterprise deployment | | Git / GitHub Actions (CI/CD) |
-| ServiceNow development | | |
-| Team leadership (16+ engineers) | | |
+| Microsoft Intune & MDM | BLE device analysis | LVGL (embedded UI) |
+| Android enterprise & industrial scanners | Sub-GHz RF spectrum analysis | Reinforcement learning (PyTorch) |
+| Mac enterprise integration | Deauth and evil twin detection | Hugo (static site generation) |
+| iOS enterprise deployment | NFC/RFID vulnerability assessment | Git / GitHub Actions (CI/CD) |
+| ServiceNow development | Physical security assessment | KiCad PCB design (in progress) |
+| Team leadership (40+ engineers) | | Embedded C systems |
 
 **AI & Machine Learning**
 
@@ -93,6 +93,19 @@ planned across game genres.
 | Transfer learning | Cross-game knowledge transfer | Planned |
 | LLM integration | Anthropic API for program synthesis | Planned |
 | Multi-agent systems | Self-play and cooperative agents | Roadmap |
+
+**Hardware & Security Research**
+
+| Area | Implementation | Status |
+|---|---|---|
+| WiFi security analysis | Device scanning and classification | Active |
+| BLE scanning | AirTag and BLE camera detection | In progress |
+| RF spectrum analysis | Sub-GHz monitoring and alerting | Active |
+| PCB design | SentinelBoard expansion board | In progress |
+| Embedded systems | Flipper Zero SDK in C | Active |
+| Hardware security tool | Flipper Zero Security Suite | Active |
+| Temporal analysis | Delta scanning and pattern detection | Planned |
+| Open source hardware | CERN OHL licensed PCB design | Planned |
 
 ---
 
