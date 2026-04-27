@@ -45,13 +45,13 @@ This blog is where I document what I'm building and learning in real time. The w
 
 ---
 
-## Currently Building
-
-**Flipper Zero Physical Security Suite** — A complete hardware security
-toolkit programmed from scratch. WiFi device scanner, Sub-GHz analyzer,
-IR lens detector with ESP32-CAM, NFC reader, GPS location logging, and
-a CrowPanel 3.5" LVGL touchscreen interface. Every line of code
-documented on this blog.
+**Flipper Zero Physical Security Suite** — A long term open source
+physical security assessment toolkit built from scratch on the
+Flipper Zero platform. 24 planned phases covering WiFi scanning,
+BLE detection, Sub-GHz analysis, IR lens detection, NFC vulnerability
+assessment, temporal behavioral analysis, automated PDF reporting,
+and a custom open source expansion PCB (SentinelBoard). Every line of 
+code and every design decision documented on this blog.
 
 [GitHub](https://github.com/JDBentley/flipper-zero-security-suite)
 
