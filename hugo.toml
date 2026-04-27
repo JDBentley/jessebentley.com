@@ -23,14 +23,16 @@ buildFuture = false
   tocopen = false
 
   [params.homeInfoParams]
-    Title = "Hi, I'm Jesse Bentley"
-    Content = "Security professional and Army veteran with 20 years in enterprise IT, now currently documenting my transition into offensive security and penetration testing. Currently building two long term projects: a comprehensive open source physical security assessment toolkit on the Flipper Zero platform, and GameMaster AI, a from-scratch reinforcement learning system that teaches AI agents to play Steam games using Python and PyTorch."
-    name = "github"
-    url = "https://github.com/JDBentley"
+      Title = "Hi, I'm Jesse Bentley"
+      Content = "Security professional and Army veteran with 20 years in enterprise IT, now currently documenting my transition into offensive security and penetration testing. Currently building two long term projects: a comprehensive open source physical security assessment toolkit on the Flipper Zero platform, and GameMaster AI, a from-scratch reinforcement learning system that teaches AI agents to play Steam games using Python and PyTorch."
 
   [[params.socialIcons]]
-    name = "linkedin"
-    url = "https://www.linkedin.com/in/jesse-bentley/"
+      name = "github"
+      url = "https://github.com/JDBentley"
+
+  [[params.socialIcons]]
+      name = "linkedin"
+      url = "https://www.linkedin.com/in/jesse-bentley/"
 
   [[params.socialIcons]]
       name = "email"
