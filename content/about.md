@@ -80,7 +80,7 @@ planned across game genres.
 | Android enterprise & industrial scanners | Sub-GHz RF spectrum analysis | Reinforcement learning (PyTorch) |
 | Mac enterprise integration | Deauth and evil twin detection | Hugo (static site generation) |
 | iOS enterprise deployment | NFC/RFID vulnerability assessment | Git / GitHub Actions (CI/CD) |
-| ServiceNow development | Physical security assessment | KiCad PCB design (in progress) |
+| ServiceNow development | | KiCad PCB design (in progress) |
 | Team leadership (40+ engineers) | | Embedded C systems |
 
 **AI & Machine Learning**
