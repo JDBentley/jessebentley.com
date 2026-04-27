@@ -161,12 +161,13 @@ The Apps folder appeared after the firmware update. The compiled
 app was sitting in Examples right where ufbt put it. Opened it,
 saw the three lines of text on screen, pressed back to exit. Clean.
 
+![Hello World running on Flipper Zero hardware](/images/flipper/flipper-phase1-hello-world.jpg)
+*Phase 1 complete — first C app compiled and running on real hardware*
+
 I haven't written C in over twenty years. Seeing it run on hardware
 tonight felt genuinely good. The proof of concept is there. The
 motivation to keep going is there. The project is real now in a
 way it wasn't before the first compile.
-
-Everything is committed to GitHub. The foundation for Phase 2 is ready.
 
 ---
 

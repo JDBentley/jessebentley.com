@@ -1,0 +1,31 @@
+
+<!-- GLightbox CSS -->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+<!-- GLightbox JS -->
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+<script>
+window.addEventListener('load', function() {
+    const postImages = document.querySelectorAll('.post-content img');
+    
+    postImages.forEach(function(img) {
+        if (img.parentElement.tagName !== 'A') {
+            const link = document.createElement('a');
+            link.href = img.src;
+            link.className = 'glightbox';
+            link.setAttribute('data-title', img.alt);
+            img.parentNode.insertBefore(link, img);
+            link.appendChild(img);
+        }
+    });
+
+    GLightbox({
+        touchNavigation: true,
+        loop: false,
+        openEffect: 'fade',
+        closeEffect: 'fade',
+        slideEffect: 'slide',
+        skin: 'clean',
+    });
+});
+</script>

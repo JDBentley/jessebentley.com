@@ -1,0 +1,97 @@
+/* -- STANDARDIZED BLOG IMAGES -- */
+
+.post-content img {
+    display: block;
+    margin: 1.5rem auto;
+    max-width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    transition: transform 0.2s ease;
+}
+
+.post-content img:hover {
+    transform: scale(1.01);
+}
+
+/* -- IMAGE CAPTIONS -- */
+
+.post-content img + em {
+    display: block;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--secondary);
+    margin-top: -1rem;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+/* -- GLIGHTBOX OVERRIDES -- */
+
+.glightbox-clean .gslide-description {
+    background: var(--theme);
+}
+
+.glightbox-clean .gdesc-inner {
+    color: var(--primary);
+}
+
+/* -- CODE BLOCKS -- */
+
+.post-content pre {
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+/* -- TABLES -- */
+
+.post-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+}
+
+.post-content th {
+    background: var(--code-bg);
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 2px solid var(--border);
+}
+
+.post-content td {
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.post-content tr:last-child td {
+    border-bottom: none;
+}
+
+/* -- DETAILS / SUMMARY (collapsibles) -- */
+
+details {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    margin: 1rem 0;
+}
+
+details summary {
+    cursor: pointer;
+    padding: 0.5rem 0;
+    font-weight: 500;
+}
+
+details[open] summary {
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+/* -- SERIES BOX -- */
+
+.post-series-box {
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
