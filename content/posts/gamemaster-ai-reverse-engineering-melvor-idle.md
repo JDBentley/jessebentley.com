@@ -1,5 +1,5 @@
 +++
-date = '2026-05-08T08:00:00-04:00'
+date = '2026-05-08T00:00:00-04:00'
 draft = false
 title = 'GameMaster AI: Reverse Engineering Melvor Idle'
 description = 'Week 3 of GameMaster AI — attempting to unlock parallel training instances by reverse engineering the Melvor Idle NW.js app. Three layers deep and still not there.'

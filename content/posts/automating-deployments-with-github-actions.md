@@ -1,5 +1,5 @@
 +++
-date = '2026-04-28T08:00:00-04:00'
+date = '2026-04-28T00:00:00-04:00'
 draft = false
 title = 'Automating Deployments with GitHub Actions'
 description = 'A line by line breakdown of the GitHub Actions workflow that automatically builds and deploys this site every time I push to GitHub — and how the cron schedule handles timed publishing.'

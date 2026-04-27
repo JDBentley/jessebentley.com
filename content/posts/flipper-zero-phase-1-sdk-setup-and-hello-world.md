@@ -1,5 +1,5 @@
 +++
-date = '2026-05-05T08:00:00-04:00'
+date = '2026-05-05T00:00:00-04:00'
 draft = false
 title = 'Flipper Zero Phase 1 — SDK Setup and Hello World in C'
 description = 'Setting up the Flipper Zero development environment on Ubuntu from scratch, understanding the SDK, and writing the first C app that runs on real hardware.'

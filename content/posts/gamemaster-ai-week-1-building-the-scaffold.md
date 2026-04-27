@@ -1,5 +1,5 @@
 +++
-date = '2026-04-24T08:00:00-04:00'
+date = '2026-04-24T00:00:00-04:00'
 draft = false
 title = 'GameMaster AI: Project Scaffold and Core Types'
 description = 'Week 1 of building GameMaster AI — a from-scratch reinforcement learning system. No libraries, no shortcuts. Starting with the project scaffold and core type system.'

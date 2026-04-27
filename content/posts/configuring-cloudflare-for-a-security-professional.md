@@ -1,5 +1,5 @@
 +++
-date = '2026-05-04T08:00:00-04:00'
+date = '2026-05-04T00:00:00-04:00'
 draft = false
 title = 'Configuring Cloudflare for a Security Professional'
 description = 'Why I put Cloudflare in front of my personal site, what the free tier actually gives you, and why it matters more when you work in security.'

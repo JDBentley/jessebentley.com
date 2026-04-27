@@ -1,5 +1,5 @@
 +++
-date = '2026-05-15T08:00:00-04:00'
+date = '2026-05-15T00:00:00-04:00'
 draft = false
 title = 'GameMaster AI: Building the Melvor Idle Connector'
 description = 'Week 4 of GameMaster AI — building the full Melvor Idle connector with dynamic skill and action discovery, observation vectors, and action masking.'

@@ -1,5 +1,5 @@
 +++
-date = '2026-04-21T22:36:42-04:00'
+date = '2026-04-21T00:00:00-04:00'
 draft = false
 title = 'Building the Foundation'
 description = 'How I set up a professional Hugo site with automated deployment from scratch and why I chose to do it right instead of doing it fast.'
