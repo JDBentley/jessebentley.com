@@ -81,7 +81,7 @@ planned across game genres.
 | Mac enterprise integration | Deauth and evil twin detection | Hugo (static site generation) |
 | iOS enterprise deployment | NFC/RFID vulnerability assessment | Git / GitHub Actions (CI/CD) |
 | ServiceNow development | | KiCad PCB design (in progress) |
-| Team leadership (40+ engineers) | | Embedded C systems |
+| Team leadership (16+ engineers) | | Embedded C systems |
 
 **AI & Machine Learning**
 
