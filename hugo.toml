@@ -22,6 +22,12 @@ buildFuture = false
   showtoc = true
   tocopen = false
 
+  [params.assets]
+      favicon = "/favicon.ico"
+      favicon16x16 = "/favicon-16x16.png"
+      favicon32x32 = "/favicon-32x32.png"
+      apple_touch_icon = "/apple-touch-icon.png"
+
   [params.homeInfoParams]
       Title = "Hi, I'm Jesse Bentley"
       Content = "Security professional and Army veteran with 20 years in enterprise IT, now currently documenting my transition into offensive security and penetration testing. Currently building two long term projects: a comprehensive open source physical security assessment toolkit on the Flipper Zero platform, and GameMaster AI, a from-scratch reinforcement learning system that teaches AI agents to play Steam games using Python and PyTorch."
