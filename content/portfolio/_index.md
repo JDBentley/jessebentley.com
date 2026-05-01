@@ -17,16 +17,51 @@ A collection of projects built from scratch and documented honestly on this blog
 
 ---
 
-### Flipper Zero Physical Security Suite
+### SentinelFlip
 
-A long term open source physical security assessment toolkit built
-from scratch on the Flipper Zero platform. No pre-built firmware —
-every feature written, documented, and explained line by line.
+A modular physical security reconnaissance platform built from
+scratch on the Flipper Zero. Not just a scanner — a system that
+collects signals, detects changes over time, and produces
+actionable intelligence for penetration testing engagements
+and travel security assessments.
 
-**Hardware — v1.0 (current)**
+Every feature maps to a real world use case. Every line of code
+is documented on the blog. Targeting a DEF CON 2027 presentation
+and open source hardware release.
 
-- Flipper Zero (main device)
-- ESP32 WiFi Dev Board
+**Modules**
+
+*Wireless Recon*
+- BLE device scanning and fingerprinting
+- WiFi device scanner with MAC classification
+- Device tracking and delta analysis over time
+- Deauth attack and evil twin detection
+- Pre-loaded camera manufacturer OUI database
+- Live editable whitelist/blacklist via Flipper,
+  CrowPanel, or companion app
+
+*Optical Recon*
+- IR lens detector (940nm illumination + ESP32-CAM)
+- Hidden camera detection from adjacent spaces
+- NFC/RFID vulnerability assessment
+
+*Environmental Sensing*
+- WiFi CSI motion detection through walls
+- Baseline and temporal analysis engine
+- Risk scoring system (0-100 per scan)
+- GPS stamped scan logging
+
+*Intelligence Layer*
+- Automated PDF report generation
+- Shodan and CVE database integration
+- Python companion app with map visualization
+- Raspberry Pi base station with 5" display
+
+**Hardware**
+
+*v1.0 (current)*
+- Flipper Zero (control and interface)
+- ESP32-C6 (WiFi + BLE scanning, CSI sensing)
 - ESP32-CAM with 940nm IR LED array
 - NRF24L01+PA+LNA 2.4GHz module
 - NEO-6M GPS module
@@ -34,55 +69,41 @@ every feature written, documented, and explained line by line.
 - SentinelBoard — custom open source expansion PCB
 - Custom 3D printed PETG enclosure
 
-**Hardware — v2.0 (planned)**
-
-- Integrated ESP32-S3 (replaces WiFi Dev Board)
-- Adds Bluetooth 5 LE scanning capability
+*v2.0 (planned)*
+- Integrated ESP32-S3 replacing WiFi Dev Board
 - CC1352R dual band radio (Sub-GHz + 2.4GHz)
-- Single unified board replaces all modules
-- JLCPCB manufactured, CERN Open Hardware licensed
+- Single unified board — JLCPCB manufactured
+- CERN Open Hardware License
 
-**Detection Capabilities**
+*Drop Box (POC)*
+- LilyGO T-SIM7000G (ESP32 + cellular)
+- 18650 battery powered (24-48hr runtime)
+- 3D printed PETG enclosure with magnetic feet
+- Cellular backhaul for remote monitoring
+- "What do you think we can do for $35?"
 
-- WiFi device scanner with MAC classification
-- BLE device and tracker detection (AirTags, cameras)
-- Sub-GHz RF spectrum analyzer
-- IR lens detector (hidden camera illumination)
-- NFC/RFID vulnerability assessment
-- 2.4GHz device scanning (NRF24L01)
-- Deauth attack detector
-- Evil twin access point detector
-- Probe request logger (passive)
-- Captive portal detector
+**Conference Talk Series**
 
-**Intelligence Layer**
+- Talk 1 → Hack Red Con Fall 2026
+  "Seeing Through Walls for $10"
+  WiFi CSI sensing as a pen testing attack vector
+  CFP deadline: August 31 2026
 
-- Three tier MAC classification (whitelist, blacklist, greylist)
-- Pre-loaded camera manufacturer OUI database
-- Live editable lists via Flipper, CrowPanel, or companion app
-- Baseline and delta scanning (temporal analysis engine)
-- Risk scoring system (0-100 per scan)
-- Device fingerprinting beyond OUI lookup
-- GPS stamped scan logging
-- Automated PDF report generation
+- Talk 2 → BSides Nashville 2027
+  Hidden camera detection at scale
 
-**Interface**
-
-- Flipper Zero screen and buttons (field use)
-- CrowPanel 3.5" LVGL touch dashboard (companion display)
-- Raspberry Pi base station with 5" display (desk unit)
-- Python companion app (map visualization, reporting)
-- Shodan and CVE database integration (companion app)
+- Talk 3 → BSides Knoxville 2027
+  RFID enterprise vulnerabilities
 
 **Timeline**
 
 - Phase 1 complete — SDK and Hello World ✅
-- Phases 2-10 — Core detection features (2026)
-- Phases 11-18 — Intelligence and advanced features (2026)
-- Phases 19-21 — Reporting, PCB, and enclosure (early 2027)
-- Phases 22-24 — Research tier and ML layer (2027)
+- Phase 2 in progress — WiFi/BLE scanner 🔄
+- Phases 3-24 — Active development through 2027
 
-Links coming soon
+**Blog series:** [SentinelFlip Build](/series/flipper-zero-build/)
+
+**GitHub:** [SentinelFlip](https://github.com/JDBentley/sentinelflip)
 
 ---
 

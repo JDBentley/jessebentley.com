@@ -45,15 +45,17 @@ This blog is where I document what I'm building and learning in real time. The w
 
 ---
 
-**Flipper Zero Physical Security Suite** — A long term open source
-physical security assessment toolkit built from scratch on the
-Flipper Zero platform. 24 planned phases covering WiFi scanning,
-BLE detection, Sub-GHz analysis, IR lens detection, NFC vulnerability
-assessment, temporal behavioral analysis, automated PDF reporting,
-and a custom open source expansion PCB (SentinelBoard). Every line of 
-code and every design decision documented on this blog.
+**SentinelFlip** — A modular physical security reconnaissance
+platform built from scratch on the Flipper Zero. Not just a scanner —
+a system that collects signals, detects changes over time, and produces
+actionable intelligence for penetration testing engagements and travel
+security assessments. 24 phases planned covering wireless recon,
+optical recon, WiFi CSI sensing through walls, temporal analysis,
+automated reporting, and a custom open source expansion PCB.
+Targeting a Hack Red Con presentation and open source hardware release.
+Every line of code documented on the blog.
 
-Link coming soon
+[GitHub](https://github.com/JDBentley/sentinelflip)
 
 ---
 
