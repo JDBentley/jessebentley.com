@@ -1,7 +1,7 @@
 +++
 date = '2026-05-01T00:00:00-04:00'
 draft = false
-title = 'Building the First Agent-Environment Loop'
+title = 'Gamemaster AI: Building the First Agent-Environment Loop'
 description = 'Building the first working GameMaster AI agent-environment loop, writing tests before the code was right, and letting pytest do the debugging for me.'
 author = 'Jesse Bentley'
 tags = ['python', 'reinforcement-learning', 'testing', 'pytest', 'ai']
