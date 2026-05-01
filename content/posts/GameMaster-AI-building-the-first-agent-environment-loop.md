@@ -35,7 +35,7 @@ They didn't.
 
 Pytest caught two separate bugs immediately and the failure output was specific enough to tell me exactly where to look.
 
-![pytest failure output showing TypeError on observation and RandomAgent attribute error](/images/gamemaster-ai/2026-04-30/pytest-failure-number-line.png)
+![pytest failure output showing TypeError on observation and RandomAgent attribute error](/images/gamemaster-ai/2026-05-01/pytest-failure-number-line.png)
 *3 failed, 3 passed. The failure messages pointed directly at both bugs.*
 
 **Bug one: returning a method instead of calling it.**
@@ -76,7 +76,7 @@ Two bugs, both caught immediately by the test suite, both fixed in under five mi
 
 ## What the Outcome Was
 
-![pytest output showing 6 passed in 0.03s](/images/gamemaster-ai/2026-04-30/pytest-pass-number-line.png)
+![pytest output showing 6 passed in 0.03s](/images/gamemaster-ai/2026-05-01/pytest-pass-number-line.png)
 *6 passed. The full agent-environment loop validated.*
 
 All tests passing after both fixes. The full loop works: the agent selects a valid action, the environment updates position, the reward system returns the correct value, and the observation comes back as a proper dictionary.
