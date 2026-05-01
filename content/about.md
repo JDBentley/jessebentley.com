@@ -53,7 +53,7 @@ assessment, temporal behavioral analysis, automated PDF reporting,
 and a custom open source expansion PCB (SentinelBoard). Every line of 
 code and every design decision documented on this blog.
 
-[GitHub](https://github.com/JDBentley/flipper-zero-security-suite)
+Link coming soon
 
 ---
 

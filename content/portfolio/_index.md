@@ -82,9 +82,7 @@ every feature written, documented, and explained line by line.
 - Phases 19-21 — Reporting, PCB, and enclosure (early 2027)
 - Phases 22-24 — Research tier and ML layer (2027)
 
-**Blog series:** [Flipper Zero Build](/series/flipper-zero-build/)
-
-**GitHub:** [flipper-zero-security-suite](https://github.com/JDBentley/flipper-zero-security-suite)
+Links coming soon
 
 ---
 
