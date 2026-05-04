@@ -1,141 +1,242 @@
 +++
-date = '2026-05-04T00:00:00-04:00'
+date = '2026-05-02T00:00:00-04:00'
 draft = false
-title = 'Configuring Cloudflare for a Security Professional'
-description = 'Why I put Cloudflare in front of my personal site, what the free tier actually gives you, and why it matters more when you work in security.'
+title = 'WiFi CSI Research: Building a Foundation Before the First Signal'
+description = 'Setting up the WiFi CSI research environment, integrating firmware into version control, and enabling CSI on ESP32-C6 before first signal capture.'
 author = 'Jesse Bentley'
-tags = ['cloudflare', 'dns', 'security', 'email', 'cdn']
-categories = ['meta']
-series = ['site-build']
+tags = ['wifi-csi', 'esp32-c6', 'firmware', 'security-research', 'rf']
+categories = ['wifi-csi-research']
+series = ['wifi-csi-sensing']
 showToc = true
 tocopen = false
 +++
 
-## The Goal
+# WiFi CSI Research: Building a Foundation Before the First Signal
 
-Get Cloudflare sitting in front of JesseBentley.com handling DNS,
-CDN, and security. The goal wasn't just faster load times and it was
-making sure the infrastructure behind a security portfolio reflects
-the same thinking I want to bring to the field professionally.
+## Background
+
+The goal of this project is to use WiFi Channel State Information (CSI) to detect physical motion and environmental changes passively with no cameras, no dedicated sensors, only distortion introduced into an existing RF signal.
+
+Before that is possible, the system needs a foundation that supports reproducible research:
+
+- firmware under version control  
+- a consistent build environment  
+- CSI explicitly enabled at the hardware level  
+
+This post covers the first two sessions. No CSI data was collected. The outcome here is structural, the system can now be built and configured without guessing.
 
 ---
 
 ## What I Expected
 
-I knew Cloudflare existed and I knew it was used to prevent DDoS
-attacks. That was basically it. I assumed it was a commercial product
-for enterprise customers with budgets and contracts. I didn't think
-a free tier would be worth much.
+The expectations were straightforward:
 
-I was wrong about that.
+- a repository that separates raw and processed data  
+- firmware inside the repository, version-controlled with everything else  
+- CSI exposed as a configurable option in ESP-IDF  
+- a successful build after enabling CSI  
+
+None of these are complex individually. Skipping them creates failure modes that are harder to debug later.
 
 ---
 
 ## What I Ran Into
 
-The first thing that hit me opening the Cloudflare dashboard was
-how wide the free tier actually is. DDoS mitigation, global CDN,
-SSL certificates, DNS management, analytics, bot protection, and
-email routing and all of it free, all active the moment you point your
-nameservers at Cloudflare.
+The first issue showed up immediately: the firmware was not inside the repository.
 
-I'd assumed most of it would be locked behind a paid plan. It isn't.
+![Initial WiFi CSI repository structure](/images/wifi-csi/2026-05-02/01-initial-repo-structure.png)
 
-**DNS setup was straightforward.** Cloudflare imported all my
-existing Bluehost DNS records automatically when I added the domain.
-I just had to clean up the records I didn't need, the old mail server
-entries that were no longer relevant, and point the nameservers.
-The hardest part was waiting for propagation, which felt slow but
-was actually under an hour.
+*Initial repository structure before firmware was moved into the project.*
 
-**The mail records needed attention.** Cloudflare can't proxy mail
-traffic the same way it proxies web traffic. Mail records need to
-be DNS only and no orange cloud. Getting that wrong would have broken
-email delivery silently which is exactly the kind of subtle mistake
-that's annoying to debug later.
+The ESP32-C6 project existed at:
 
-**The email routing was the unexpected one.** I wasn't planning to
-set up email. I knew services like this existed but didn't know
-Cloudflare was one of them. For free Cloudflare will receive email
-sent to any address at your domain and forward it wherever you want.
+```bash
+~/esp/csi_capture
+```
 
-So jesse@jessebentley.com now forwards to my ProtonMail account.
-No mail server to maintain. No deliverability issues from shared
-hosting. No ongoing cost. One rule in the Cloudflare dashboard
-and it just works.
+That breaks reproducibility. The repository can change without the firmware, and the firmware can change without the repository. There is no single source of truth.
 
-**Why ProtonMail specifically:**
-End to end encrypted email from
-a provider that takes privacy
-seriously is the right call for
-someone moving into security.
-Using a custom domain address
-for professional contact while
-keeping ProtonMail's security
-for actual message handling
-is the best of both options.
+The fix was simple which is move the firmware:
 
-**The security angle that most tutorials skip:**
+![Firmware moved into repository](/images/wifi-csi/2026-05-02/08-firmware-moved-into-repo.png)
 
-Most Cloudflare tutorials are written for people who want a faster
-website. That's valid but it's not the whole picture for someone
-working in security.
+*Firmware relocated into `firmware/esp32-c6/csi_capture/` so source and configuration are version-controlled together.*
 
-Security professionals deal with sensitive data, client
-infrastructure details, vulnerability reports, engagement findings.
-If your personal site is sitting naked on shared hosting with no
-protection in front of it you're creating an unnecessary attack
-surface. A compromised personal site can be used as a pivot point.
-It reflects poorly on your judgment professionally. And if you're
-handling any client adjacent communication through that domain
-the risk compounds.
+---
 
-Cloudflare in front of everything means:
+The second issue was environmental.
 
-- Traffic goes through Cloudflare before it ever touches Bluehost
-- DDoS attacks get absorbed before reaching the origin server
-- The WAF blocks common web attack patterns automatically
-- Your real server IP stays hidden behind Cloudflare's network
-- SSL is handled and enforced at the edge
-- Bot traffic gets filtered before it hits your hosting
+Running:
 
-None of that costs anything on the free tier. There's no reason
-not to have it and especially if you're actively building a public
-profile in the security community.
+```bash
+idf.py menuconfig
+```
+
+from the wrong directory produced an error instead of opening configuration.
+
+That failure matters. It confirms the environment is not aligned rather than silently misconfiguring the build.
+
+After correcting the working directory and re-sourcing ESP-IDF:
+
+![Menuconfig opened successfully](/images/wifi-csi/2026-05-02/04-menuconfig-success.png)
+
+*ESP-IDF menuconfig opened successfully after running from the correct project context.*
+
+---
+
+From there, the next step was target configuration.
+
+![ESP32-C6 target set](/images/wifi-csi/2026-05-02/05-esp32c6-target-set.png)
+
+*ESP-IDF target configured for ESP32-C6.*
+
+![Target confirmation in build output](/images/wifi-csi/2026-05-02/06-target-confirmation-build-output.png)
+
+*Build output confirming ESP32-C6 target configuration is applied.*
+
+---
+
+The final critical step was enabling CSI.
+
+![WiFi menuconfig options](/images/wifi-csi/2026-05-02/07-wifi-menuconfig-options.png)
+
+*WiFi configuration menu showing CSI option before enabling.*
+
+![WiFi CSI enabled in menuconfig](/images/wifi-csi/2026-05-02/10-csi-enabled-confirmed.png)
+
+*CSI explicitly enabled in firmware configuration.*
+
+CSI is disabled by default. If left unchanged, the firmware builds and runs but produces no CSI data and a silent failure condition.
 
 ---
 
 ## What the Outcome Was
 
-JesseBentley.com now sits behind Cloudflare. DNS resolves through
-their global network. SSL is enforced. Email routes from
-jesse@jessebentley.com to ProtonMail automatically. The real
-Bluehost server IP is hidden. All of it runs on the free tier.
+The repository was initialized and committed.
 
-The dashboard has more features than I've explored yet. That's
-fine, the foundation is right and I understand what's in place
-and why. That's what matters.
+![Initial files staged for commit](/images/wifi-csi/2026-05-02/02-git-status-initial-files.png)
+
+*Git status showing baseline files staged before the first commit.*
+
+```text
+wifi-csi-research/
+├── firmware/
+├── data/
+│   ├── raw/
+│   └── processed/
+├── analysis/
+├── experiments/
+├── docs/
+├── captures/
+├── logs/
+```
+
+Commit:
+
+```text
+6d6f7bf — chore: initialize wifi csi research repository
+```
+
+The firmware was integrated and CSI enabled:
+
+```text
+0dbdb88 — feat: integrate ESP32-C6 firmware and enable CSI support
+```
+
+Build verification:
+
+![Build completed with CSI enabled](/images/wifi-csi/2026-05-02/11-build-with-csi.png)
+
+*Firmware build completed successfully after CSI was enabled.*
+
+Verification confirms:
+
+- repository structure exists and is committed  
+- firmware now resides inside version control  
+- `.gitignore` excludes build artifacts  
+- ESP32-C6 target is applied in build output  
+- CSI is explicitly enabled  
+- firmware builds successfully  
+
+---
+
+## Analysis
+
+The outcome here is structural, not functional.
+
+CSI being disabled by default introduces a silent failure condition. The system appears operational while producing no signal.
+
+The directory error reinforces the same idea. ESP-IDF depends on correct working directory and environment state. In this case, failure was explicit which is preferable.
+
+Moving firmware into the repository closes a reproducibility gap. The firmware source, configuration, and commit history now move together.
+
+Defining structure before data collection enforces separation between:
+
+- experiment definition  
+- captured data  
+- analysis  
+
+Once data starts accumulating, that separation becomes difficult to impose.
+
+---
+
+## Limitations
+
+- No CSI data has been collected  
+- No callback exists to receive CSI events  
+- CSI signal flow is unvalidated  
+- ESP32-C6 CSI behavior is untested on this hardware  
+- Build environment is not pinned or containerized  
+
+The system builds. It does not yet produce or validate signal data.
+
+---
+
+## Security Implications
+
+WiFi CSI enables passive sensing using existing RF signals.
+
+A device does not need to transmit but it only observes channel changes.
+
+If CSI can be collected reliably:
+
+- motion may be inferred without cameras  
+- detection becomes harder (no new RF source)  
+- sensing can be embedded into legitimate devices  
+
+At this stage, none of that is demonstrated.
+
+Everything depends on one condition:
+
+→ reliable, repeatable CSI data collection  
+
+That has not yet been validated.
 
 ---
 
 ## GitHub
 
-The site repository shows the full Hugo configuration that
-Cloudflare serves:
+Repository: wifi-csi-research  
+Branch: main  
 
-[jessebentley.com](https://github.com/JDBentley/jessebentley.com)
+Relevant commits:
 
-Cloudflare configuration is managed through the Cloudflare
-dashboard directly — there are no config files to commit.
-The DNS records, email routing rules, and security settings
-all live in the Cloudflare UI.
+- `6d6f7bf` — initialize repository  
+- `0dbdb88` — integrate firmware and enable CSI  
 
 ---
 
-## What's Next
+## Future Work
 
-The site infrastructure series is nearly wrapped up. Next post
-covers the editorial structure, Hugo archetypes, the five section
-blog format, and how the Monday, Tuesday, Friday posting schedule
-keeps two active project blogs running without either one falling
-behind.
+Next step: establish the first data path.
+
+- register a CSI callback in firmware  
+- output raw CSI data over serial  
+- flash to ESP32-C6  
+- capture serial output  
+- introduce controlled motion and compare signal changes  
+
+The loop closes when:
+
+- CSI frames are observed in serial output  
+- those frames change in response to controlled movement  
