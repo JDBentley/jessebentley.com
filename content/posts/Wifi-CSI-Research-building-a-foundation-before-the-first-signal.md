@@ -1,5 +1,5 @@
 +++
-date = '2026-05-02T00:00:00-04:00'
+date = '2026-05-04T00:00:00-04:00'
 draft = false
 title = 'WiFi CSI Research: Building a Foundation Before the First Signal'
 description = 'Initializing the WiFi CSI research environment, moving firmware into version control, and enabling CSI support in ESP32-C6 before collecting any signal data.'
