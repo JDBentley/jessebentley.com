@@ -13,7 +13,7 @@ tocopen = false
 
 ## Background
 
-The goal of this project is to use WiFi Channel State Information (CSI) to detect physical motion and environmental changes passively — no cameras, no dedicated sensors, only distortion introduced into an existing RF signal.
+The goal of this project is to use WiFi Channel State Information (CSI) to detect physical motion and environmental changes passively with no cameras, no dedicated sensors, only distortion introduced into an existing RF signal.
 
 Before that is possible, the system needs a foundation that supports reproducible research:
 
@@ -21,7 +21,7 @@ Before that is possible, the system needs a foundation that supports reproducibl
 - a consistent build environment  
 - CSI explicitly enabled at the hardware level  
 
-This post covers the first two sessions. No CSI data was collected. The outcome here is structural — the system can now be built and configured without guessing.
+This post covers the first two sessions. No CSI data was collected. The outcome here is structural and the system can now be built and configured without guessing.
 
 ---
 
@@ -54,7 +54,7 @@ The ESP32-C6 project existed at:
 
 That breaks reproducibility. The repository can change without the firmware, and the firmware can change without the repository. There is no single source of truth.
 
-The fix was simple — move the firmware:
+The fix was simple which was to move the firmware:
 
 ![Firmware moved into repository](/images/wifi-csi/2026-05-02/08-firmware-moved-into-repo.png)
 
@@ -104,7 +104,7 @@ The final critical step was enabling CSI.
 
 *CSI explicitly enabled in firmware configuration.*
 
-CSI is disabled by default. If left unchanged, the firmware builds and runs but produces no CSI data — a silent failure condition.
+CSI is disabled by default. If left unchanged, the firmware builds and runs but produces no CSI data and a silent failure condition.
 
 ---
 
@@ -164,7 +164,7 @@ The outcome here is structural, not functional.
 
 CSI being disabled by default introduces a silent failure condition. The system appears operational while producing no signal.
 
-The directory error reinforces the same idea. ESP-IDF depends on correct working directory and environment state. In this case, failure was explicit — which is preferable.
+The directory error reinforces the same idea. ESP-IDF depends on correct working directory and environment state. In this case, failure was explicit which is preferable.
 
 Moving firmware into the repository closes a reproducibility gap. The firmware source, configuration, and commit history now move together.
 
@@ -194,7 +194,7 @@ The system builds. It does not yet produce or validate signal data.
 
 WiFi CSI enables passive sensing using existing RF signals.
 
-A device does not need to transmit — it only observes channel changes.
+A device does not need to transmit and it only observes channel changes.
 
 If CSI can be collected reliably:
 
