@@ -13,13 +13,13 @@ tocopen = false
 
 ## Background
 
-WiFi Channel State Information (CSI) captures how a wireless signal changes as it travels between a transmitter and receiver. Every object in that path — walls, furniture, people moving through a room — alters the signal in ways that appear inside the CSI data.
+WiFi Channel State Information (CSI) captures how a wireless signal changes as it travels between a transmitter and receiver. Every object in that path be it walls, furniture, or people moving through a room they alter the signal in ways that appear inside the CSI data.
 
 The goal of this research track is determining whether those changes are detectable, repeatable, and usable in a physical security context.
 
 Before any sensing or analysis becomes possible, the ESP32-C6 first needs to reliably produce CSI output at all.
 
-These two sessions — May 2nd and May 8th — cover that entire path: from the first failed firmware build through structured, reproducible dataset generation.
+These two sessions on May 2nd and May 8th, cover that entire path: from the first failed firmware build through structured, reproducible dataset generation.
 
 ---
 
@@ -217,7 +217,7 @@ For pentesting relevance:
 - CSI-based sensing systems have identifiable operational dependencies
 - Understanding those dependencies is the first step toward understanding failure modes
 
-A sensing system dependent on active ping traffic from a known host is more fragile — and more targetable — than one capable of passive acquisition.
+A sensing system dependent on active ping traffic from a known host is more fragile and more targetable than one capable of passive acquisition.
 
 The broader finding is that CSI sensing is less passive than it initially appears.
 
@@ -251,4 +251,4 @@ Immediate priorities:
 
 The core question now is whether the differences between baseline and movement captures represent actual signal or environmental noise.
 
-That answer requires statistical analysis and visualization — both planned for the next session.
+That answer requires statistical analysis and visualization which are both planned for the next session.
