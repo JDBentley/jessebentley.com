@@ -130,12 +130,12 @@ The first obstacle was a CSI API mismatch inside the ESP32-C6 firmware.
 
 The firmware initially used an unsupported CSI configuration struct, causing the build to fail completely.
 
-![Build failure caused by ESP32-C6 CSI configuration struct mismatch](/images/wifi-csi-research/2026-05-18/11-csi-config-struct-build-error.png)
+![Build failure caused by ESP32-C6 CSI configuration struct mismatch](/images/wifi-csi/2026-05-18/11-csi-config-struct-build-error.png)
 *ESP32-C6 CSI configuration mismatch preventing firmware compilation.*
 
 After correcting the struct mismatch, the firmware built and flashed successfully.
 
-![Successful ESP32-C6 CSI firmware build after struct correction](/images/wifi-csi-research/2026-05-18/12-c6-csi-config-build-success.png)
+![Successful ESP32-C6 CSI firmware build after struct correction](/images/wifi-csi/2026-05-18/12-c6-csi-config-build-success.png)
 *Successful firmware build after correcting ESP32-C6 CSI API differences.*
 
 Initial callback output only confirmed execution:
@@ -146,7 +146,7 @@ CSI len: 128
 
 That proved the callback was firing, but not whether the captured signal was usable.
 
-![Initial CSI callback output](/images/wifi-csi-research/2026-05-18/13-first-csi-output.png)
+![Initial CSI callback output](/images/wifi-csi/2026-05-18/13-first-csi-output.png)
 *Initial CSI callback execution confirmed.*
 
 After expanding the callback to export subcarrier values, measurable variation appeared in the output:
@@ -161,7 +161,7 @@ RSSI variation was also visible across packets:
 -89 → -48 → -60 → -80
 ```
 
-![Expanded CSI output showing subcarrier variation](/images/wifi-csi-research/2026-05-18/16-expanded-csi-variation.png)
+![Expanded CSI output showing subcarrier variation](/images/wifi-csi/2026-05-18/16-expanded-csi-variation.png)
 *Structured CSI output showing measurable subcarrier and RSSI variation.*
 
 ---
@@ -178,25 +178,25 @@ The phone hotspot generated intermittent bursts. Passive network presence produc
 
 CSI only stabilized once directed ICMP traffic targeted the ESP32-C6 directly.
 
-![ESP32-C6 connected to MiFi network](/images/wifi-csi-research/2026-05-18/16-wifi-connected.png)
+![ESP32-C6 connected to MiFi network](/images/wifi-csi/2026-05-18/16-wifi-connected.png)
 *ESP32-C6 associated to isolated MiFi network.*
 
-![Directed ping traffic from laptop to ESP32-C6](/images/wifi-csi-research/2026-05-18/21-ping-to-esp-success.png)
+![Directed ping traffic from laptop to ESP32-C6](/images/wifi-csi/2026-05-18/21-ping-to-esp-success.png)
 *Directed ICMP traffic sustaining CSI acquisition.*
 
-![Stable CSI generation during directed traffic](/images/wifi-csi-research/2026-05-18/22-csi-from-directed-traffic.png)
+![Stable CSI generation during directed traffic](/images/wifi-csi/2026-05-18/22-csi-from-directed-traffic.png)
 *Stable CSI acquisition under directed traffic conditions.*
 
 A second build failure appeared mid-session after IP retrieval code was incorrectly placed at file scope.
 
-![Build failure from misplaced runtime IP retrieval code](/images/wifi-csi-research/2026-05-18/18-ip-code-outside-function-build-error.png)
+![Build failure from misplaced runtime IP retrieval code](/images/wifi-csi/2026-05-18/18-ip-code-outside-function-build-error.png)
 *Runtime function call incorrectly placed inside static initialization.*
 
 After correcting the scope issue, structured dataset generation continued successfully.
 
 Cleaned datasets from session one were verified before analysis.
 
-![Session 1 cleaned baseline and movement datasets](/images/wifi-csi-research/2026-05-18/24-cleaned-csi-datasets.png)
+![Session 1 cleaned baseline and movement datasets](/images/wifi-csi/2026-05-18/24-cleaned-csi-datasets.png)
 *Structured baseline and movement datasets prepared for analysis.*
 
 ---
@@ -207,12 +207,12 @@ The analysis pipeline was expanded to compare all four datasets simultaneously.
 
 The project structure evolved into a more formalized analysis workflow:
 
-![Structured CSI dataset hierarchy and analysis workflow](/images/wifi-csi-research/2026-05-18/27-structured-dataset-hierarchy.png)
+![Structured CSI dataset hierarchy and analysis workflow](/images/wifi-csi/2026-05-18/27-structured-dataset-hierarchy.png)
 *Structured separation between baseline, movement, assisted, passive, and processed datasets.*
 
 Initial statistical comparison between baseline and movement captures immediately showed movement increasing signal instability.
 
-![Baseline versus movement statistical comparison output](/images/wifi-csi-research/2026-05-18/26-first-csi-statistics-output.png)
+![Baseline versus movement statistical comparison output](/images/wifi-csi/2026-05-18/26-first-csi-statistics-output.png)
 *Initial statistical comparison between baseline and movement captures. Movement immediately produces substantially higher variance and standard deviation.*
 
 Cross-session analysis produced the following results:
@@ -239,7 +239,7 @@ Variance: 435529.93
 Standard Deviation: 659.95
 ```
 
-![Cross-session repeatability statistics across baseline and movement captures](/images/wifi-csi-research/2026-05-18/29-repeatability-statistics-output.png)
+![Cross-session repeatability statistics across baseline and movement captures](/images/wifi-csi/2026-05-18/29-repeatability-statistics-output.png)
 *Repeatability analysis across two baseline and two movement runs. Movement captures averaged roughly 2.86x higher standard deviation than baseline captures despite substantial environmental drift.*
 
 ---
