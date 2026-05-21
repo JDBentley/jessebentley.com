@@ -1,7 +1,7 @@
 ---
 title: "WiFi CSI Research: From Raw Callbacks to Reproducible Datasets"
 date: 2026-05-18T00:00:00-04:00
-draft: true
+draft: false
 tags: ["wifi-csi", "esp32", "rf-sensing", "signal-analysis", "research"]
 categories: ["wifi-csi-research"]
 series: ["wifi-csi-research"]
@@ -13,34 +13,27 @@ tocopen: false
 
 ## Background
 
-The question driving this research is straightforward:
+The question driving this research block was straightforward:
 
-> Can WiFi Channel State Information (CSI) reliably detect human movement in a real environment?
+> Can WiFi Channel State Information (CSI) produce measurable and repeatable differences between baseline and movement conditions?
 
-CSI describes how a wireless signal propagates between a transmitter and receiver across multiple subcarriers. When a person moves through that propagation path, the multipath reflections change. Signal energy shifts. Variance increases.
+Earlier sessions confirmed the ESP32-C6 could successfully capture CSI data under directed traffic conditions. The acquisition pipeline worked. Structured datasets existed.
 
-In theory, that change is measurable.
+What was still unknown was whether movement actually produced a measurable signal difference — and whether that difference remained consistent across repeated captures.
 
-Most CSI sensing research happens under controlled conditions:
-- fixed hardware
-- stable RF environments
-- repeatable physical layouts
+That distinction matters.
 
-This research does not.
+It is easy to generate noisy RF data. It is much harder to determine whether the observed variation is:
+- movement-induced
+- environmentally driven
+- statistically repeatable
+- or simply random RF instability
 
-Testing was conducted in a hotel environment using:
-- consumer networking hardware
-- uncontrolled neighboring RF activity
-- an ESP32-C6
-- improvised physical placement
+Most CSI sensing demonstrations stop at “the graph changed.”
 
-The goal of this two-session block was narrower than “solve motion sensing.”
+This session focused on moving beyond that.
 
-The actual goal was:
-
-> Can I generate structured, reproducible CSI datasets that show measurable differences between baseline and movement conditions?
-
-Before detection claims matter, the signal itself has to be proven.
+The goal was not proving detection. The goal was determining whether the signal behavior itself was stable enough to justify continued sensing research.
 
 ---
 
@@ -50,11 +43,11 @@ Before detection claims matter, the signal itself has to be proven.
 
 - ESP32-C6 (sensor node)
 - Ubuntu laptop (`cerd-Latitude-7640`)
-- MiFi hotspot providing isolated directed traffic
+- MiFi hotspot for isolated directed traffic generation
 
 ### Firmware
 
-The ESP32-C6 runs custom CSI capture firmware built on ESP-IDF v6.1-dev.
+The ESP32-C6 was running previously developed CSI capture firmware built on ESP-IDF v6.1-dev.
 
 The callback exports:
 - timestamp
@@ -64,7 +57,7 @@ The callback exports:
 
 ### Traffic Generation
 
-CSI acquisition required active packet flow directed at the ESP32-C6.
+Reliable CSI acquisition required active packet flow directed at the ESP32-C6.
 
 Directed ICMP traffic was generated using:
 
@@ -72,16 +65,25 @@ Directed ICMP traffic was generated using:
 ping <ESP_IP>
 ```
 
-This kept CSI callbacks firing consistently during capture.
+This maintained stable CSI callback execution during all captures.
 
-### Dataset Structure
+### Dataset Collection
 
-Four CSV datasets were collected across two sessions:
+Four datasets were captured across two separate runs:
 
 - `baseline_01.csv`
 - `movement_01.csv`
 - `baseline_02.csv`
 - `movement_02.csv`
+
+Baseline captures:
+- no intentional movement
+- static environment
+- directed traffic active
+
+Movement captures:
+- physical movement introduced during acquisition
+- same traffic generation conditions maintained
 
 ### Analysis Pipeline
 
@@ -90,216 +92,186 @@ The analysis environment used:
 - pandas
 - matplotlib
 
-The analysis script was expanded during session two to support:
+The processing pipeline was expanded to support:
 - multi-run comparison
+- variance calculations
+- standard deviation comparison
 - repeatability analysis
-- cross-session statistical output
+
+The project structure also evolved into a more formalized analysis workflow:
+
+![Structured CSI dataset hierarchy and analysis workflow](/images/wifi-csi/2026-05-18/27-structured-dataset-hierarchy.png)
+*Structured separation between baseline, movement, passive, assisted, and processed datasets. The project is transitioning from raw acquisition into repeatable analysis.*
 
 ---
 
 ## What I Expected
 
+The initial expectation was straightforward:
+
 Movement captures should produce:
 - higher variance
 - higher signal energy
-- larger standard deviation
+- higher standard deviation
 
 compared to baseline captures.
 
-That part was expected.
+What I did not expect was how unstable the baseline itself would become between runs.
 
-What I did not expect was baseline instability.
+The assumption going into this session was that static-environment captures would reproduce relatively cleanly under similar conditions.
 
-The assumption going into session two was that static-environment captures would reproduce relatively cleanly between runs.
+That assumption turned out to be wrong.
 
-That assumption failed.
-
-That failure became the most important result from this testing block.
-
-I also initially assumed ambient WiFi activity would sustain continuous CSI acquisition.
-
-That assumption failed as well.
+That failure became the most important finding from this testing block.
 
 ---
 
 ## Results
 
-### Session 1 — Initial Acquisition
+### Initial Statistical Comparison
 
-The first obstacle was a CSI API mismatch inside the ESP32-C6 firmware.
+The first analysis pass compared a single baseline capture against a movement capture.
 
-The firmware initially used an unsupported CSI configuration struct, causing the build to fail completely.
-
-![Build failure caused by ESP32-C6 CSI configuration struct mismatch](/images/wifi-csi/2026-05-18/11-csi-config-struct-build-error.png)
-*ESP32-C6 CSI configuration mismatch preventing firmware compilation.*
-
-After correcting the struct mismatch, the firmware built and flashed successfully.
-
-![Successful ESP32-C6 CSI firmware build after struct correction](/images/wifi-csi/2026-05-18/12-c6-csi-config-build-success.png)
-*Successful firmware build after correcting ESP32-C6 CSI API differences.*
-
-Initial callback output only confirmed execution:
-
-```text
-CSI len: 128
-```
-
-That proved the callback was firing, but not whether the captured signal was usable.
-
-![Initial CSI callback output](/images/wifi-csi/2026-05-18/13-first-csi-output.png)
-*Initial CSI callback execution confirmed.*
-
-After expanding the callback to export subcarrier values, measurable variation appeared in the output:
-
-```text
--27,10,-29,8,29,-2,32,0,-6,5,-1,-8
-```
-
-RSSI variation was also visible across packets:
-
-```text
--89 → -48 → -60 → -80
-```
-
-![Expanded CSI output showing subcarrier variation](/images/wifi-csi/2026-05-18/16-expanded-csi-variation.png)
-*Structured CSI output showing measurable subcarrier and RSSI variation.*
-
----
-
-### Traffic Dependency Discovery
-
-Initial testing used:
-- passive idle observation
-- phone hotspot testing
-
-Neither produced reliable CSI acquisition.
-
-The phone hotspot generated intermittent bursts. Passive network presence produced almost no sustained output.
-
-CSI only stabilized once directed ICMP traffic targeted the ESP32-C6 directly.
-
-![ESP32-C6 connected to MiFi network](/images/wifi-csi/2026-05-18/16-wifi-connected.png)
-*ESP32-C6 associated to isolated MiFi network.*
-
-![Directed ping traffic from laptop to ESP32-C6](/images/wifi-csi/2026-05-18/21-ping-to-esp-success.png)
-*Directed ICMP traffic sustaining CSI acquisition.*
-
-![Stable CSI generation during directed traffic](/images/wifi-csi/2026-05-18/22-csi-from-directed-traffic.png)
-*Stable CSI acquisition under directed traffic conditions.*
-
-A second build failure appeared mid-session after IP retrieval code was incorrectly placed at file scope.
-
-![Build failure from misplaced runtime IP retrieval code](/images/wifi-csi/2026-05-18/18-ip-code-outside-function-build-error.png)
-*Runtime function call incorrectly placed inside static initialization.*
-
-After correcting the scope issue, structured dataset generation continued successfully.
-
-Cleaned datasets from session one were verified before analysis.
-
-![Session 1 cleaned baseline and movement datasets](/images/wifi-csi/2026-05-18/24-cleaned-csi-datasets.png)
-*Structured baseline and movement datasets prepared for analysis.*
-
----
-
-### Session 2 — Repeatability and Statistical Analysis
-
-The analysis pipeline was expanded to compare all four datasets simultaneously.
-
-The project structure evolved into a more formalized analysis workflow:
-
-![Structured CSI dataset hierarchy and analysis workflow](/images/wifi-csi/2026-05-18/27-structured-dataset-hierarchy.png)
-*Structured separation between baseline, movement, assisted, passive, and processed datasets.*
-
-Initial statistical comparison between baseline and movement captures immediately showed movement increasing signal instability.
+The difference appeared immediately.
 
 ![Baseline versus movement statistical comparison output](/images/wifi-csi/2026-05-18/26-first-csi-statistics-output.png)
 *Initial statistical comparison between baseline and movement captures. Movement immediately produces substantially higher variance and standard deviation.*
 
-Cross-session analysis produced the following results:
+Initial statistical output:
+
+```text
+=== Baseline Statistics ===
+Mean Energy: 625.68
+Variance: 5082.34
+Standard Deviation: 71.29
+Minimum Energy: 514.00
+Maximum Energy: 836.00
+
+=== Movement Statistics ===
+Mean Energy: 971.94
+Variance: 253394.78
+Standard Deviation: 503.38
+Minimum Energy: 158.00
+Maximum Energy: 1985.00
+```
+
+Movement increased:
+- variance
+- energy fluctuation
+- standard deviation
+
+substantially beyond the initial baseline capture.
+
+At first glance, this looked promising.
+
+The problem appeared during repeatability testing.
+
+---
+
+### Cross-Run Repeatability Analysis
+
+A second set of baseline and movement captures was collected under nominally similar conditions.
+
+The results introduced a new problem.
 
 ```text
 === Baseline 1 ===
+Rows: 50
 Mean Energy: 625.68
 Variance: 5082.34
 Standard Deviation: 71.29
 
 === Baseline 2 ===
+Rows: 49
 Mean Energy: 2060.16
 Variance: 112590.43
 Standard Deviation: 335.54
 
 === Movement 1 ===
+Rows: 51
 Mean Energy: 971.94
 Variance: 253394.78
 Standard Deviation: 503.38
 
 === Movement 2 ===
+Rows: 49
 Mean Energy: 1979.94
 Variance: 435529.93
 Standard Deviation: 659.95
+
+[*] Repeatability Summary
+Average Baseline Std Dev: 203.42
+Average Movement Std Dev: 581.67
+Movement/Baseline Std Dev Ratio: 2.86x
 ```
 
 ![Cross-session repeatability statistics across baseline and movement captures](/images/wifi-csi/2026-05-18/29-repeatability-statistics-output.png)
 *Repeatability analysis across two baseline and two movement runs. Movement captures averaged roughly 2.86x higher standard deviation than baseline captures despite substantial environmental drift.*
 
----
+Movement still produced higher instability overall.
 
-## Analysis
-
-Movement consistently increased CSI instability.
-
-Across both sessions:
-- movement datasets produced higher variance
-- movement datasets produced higher standard deviation
-- movement datasets produced larger energy fluctuations
-
-That aligns with the underlying RF behavior. Human movement changes multipath propagation paths, and CSI captures those changes.
-
-That part worked as expected.
-
-The baseline drift did not.
+But the second baseline capture drifted dramatically compared to the first.
 
 Baseline 1 standard deviation:
-
 ```text
 71.29
 ```
 
 Baseline 2 standard deviation:
-
 ```text
 335.54
 ```
 
-That represents roughly a 4.7x increase in baseline noise between two static-environment captures taken in the same location.
+That represents roughly a 4.7x increase in baseline instability between two supposedly static-environment captures.
 
 No intentional movement occurred during either baseline run.
 
-This matters because Baseline 2 begins approaching Movement 1 instability levels.
+That became the real finding.
 
-If baseline noise continues increasing, sufficiently noisy environments could overlap with low-activity movement captures, making reliable detection significantly harder.
+---
+
+## Analysis
+
+Movement consistently increased CSI instability across every capture set.
+
+Movement datasets showed:
+- higher variance
+- larger energy fluctuation
+- higher standard deviation
+
+This aligns with the expected RF behavior:
+human movement alters multipath propagation paths, and CSI reflects those changes.
+
+That portion of the hypothesis held.
+
+The baseline drift did not.
+
+The second baseline capture approached the instability level of the first movement capture.
+
+That matters because sufficiently noisy baselines can overlap with low-activity movement conditions.
+
+If that overlap becomes large enough:
+- movement detection becomes unreliable
+- false positives increase
+- environmental drift masks actual movement signatures
 
 The likely causes are operational rather than exotic:
 - neighboring RF traffic changes
-- hotspot behavior shifts
+- hotspot behavior variation
+- antenna orientation changes
 - body positioning differences
-- antenna orientation
+- multipath environmental fluctuation
 - hotel RF congestion
-- multipath environmental changes
 
-Any of these can materially affect CSI output.
+Any of these factors can materially alter CSI output.
 
-The traffic dependency finding is also operationally important.
+This introduces an important constraint:
 
-Reliable CSI acquisition required directed packet flow targeting the ESP32-C6.
+Raw CSI instability alone is probably insufficient for reliable sensing.
 
-Passive network presence alone was insufficient.
+Environmental normalization will likely be required before movement detection claims become defensible.
 
-That creates practical constraints for:
-- covert sensing
-- passive monitoring
-- low-noise deployments
-- adversarial environments
+That finding is more important than simply producing “different graphs.”
 
 ---
 
@@ -310,9 +282,10 @@ That creates practical constraints for:
 - Only two repeated runs per condition exist
 - No normalization pipeline has been implemented
 - No false positive filtering currently exists
-- Passive sensing has not been validated
-- CSI acquisition still depends on directed traffic
-- Some early debugging stages were not visually documented
+- Passive sensing was not evaluated in this session
+- Directed traffic remained required for stable acquisition
+
+This is still early-stage characterization work, not a finalized sensing system.
 
 ---
 
@@ -321,9 +294,9 @@ That creates practical constraints for:
 WiFi CSI sensing has direct physical security relevance.
 
 Potential applications include:
-- covert presence detection
-- perimeter movement sensing
 - occupancy inference
+- perimeter sensing
+- covert presence detection
 - RF-assisted environmental awareness
 
 The baseline drift finding cuts both ways.
@@ -331,19 +304,16 @@ The baseline drift finding cuts both ways.
 From a defensive perspective:
 - environmental RF instability complicates reliable detection
 
-From an evasion perspective:
-- noisy RF environments may naturally mask movement signatures
+From an offensive or evasion perspective:
+- sufficiently noisy RF environments may naturally mask movement signatures
 
-The traffic dependency finding is equally important.
+The repeatability findings also reinforce an important operational reality:
 
-A sensing system that requires active packet generation:
-- has a detectable operational footprint
-- depends on sustained traffic flow
-- introduces identifiable dependencies an adversary could target
+CSI sensing is not simply “movement changes the graph.”
 
-The broader takeaway is that CSI sensing is not as passive or straightforward as early assumptions suggested.
+The environment itself changes the graph continuously.
 
-That finding is worth documenting before stronger detection claims are made.
+Understanding that distinction is critical before stronger sensing claims become credible.
 
 ---
 
@@ -371,18 +341,20 @@ feat: implement reproducible CSI dataset acquisition workflow
 
 ## Future Work
 
-The next phase is not simply collecting more data.
+The next phase is not collecting more random captures.
 
-The next phase is answering the question baseline drift introduced:
+The next phase is solving the baseline drift problem.
+
+The core question now becomes:
 
 > How do I distinguish movement-induced CSI instability from environmental RF drift?
 
 Immediate next steps:
-- Build normalization pipeline
-- Establish rolling baseline correction
-- Compare normalized movement signatures across sessions
-- Define provisional noise floor thresholds
-- Evaluate false positive reduction after normalization
-- Expand repeatability testing beyond two runs
+- build normalization pipeline
+- establish rolling baseline correction
+- compare normalized movement signatures across sessions
+- define provisional noise floor thresholds
+- evaluate false positive reduction after normalization
+- expand repeatability testing beyond two runs
 
-Until baseline instability is understood and controlled, movement detection claims remain premature.
+Until environmental drift is understood and controlled, movement detection claims remain premature.
