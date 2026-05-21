@@ -1,7 +1,7 @@
 ---
 title: "WiFi CSI Research: From Raw Callbacks to Reproducible Datasets"
 date: 2026-05-18T00:00:00-04:00
-draft: false
+draft: true
 tags: ["wifi-csi", "esp32", "rf-sensing", "signal-analysis", "research"]
 categories: ["wifi-csi-research"]
 series: ["wifi-csi-research"]
