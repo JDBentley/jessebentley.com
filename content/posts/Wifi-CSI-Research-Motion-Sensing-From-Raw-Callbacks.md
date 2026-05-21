@@ -9,7 +9,7 @@ showToc: true
 tocopen: false
 ---
 
-# WiFi CSI Motion Sensing: From Raw Callbacks to Reproducible Datasets
+# From Raw Callbacks to Reproducible Datasets
 
 ## Background
 
