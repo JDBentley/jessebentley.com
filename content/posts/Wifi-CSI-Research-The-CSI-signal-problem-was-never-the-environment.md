@@ -188,7 +188,7 @@ The averaging logic treated both as equivalent.
 
 That assumption was wrong.
 
-The 256-byte schema includes:
+The 256-byte schema appears to include:
 - guard bands
 - null subcarriers
 - near-zero values that were not actually signal energy
@@ -201,9 +201,7 @@ amplitude > 0
 
 and artificially dragged the average downward.
 
-The low cluster (~24) was not environmental signal behavior.
-
-It was a firmware artifact.
+The low cluster (~24) is most consistent with a firmware acquisition artifact rather than environmental signal behavior.
 
 The high cluster (~45) was the actual signal.
 
@@ -227,9 +225,11 @@ No evidence currently suggests the bimodality originated from the RF environment
 - Mean amplitude: 43.8
 - Standard deviation: 4.51
 
-Firmware correction alone reduced standard deviation by roughly 46%.
-
-Nothing else changed.
+> Firmware correction alone reduced baseline standard deviation by roughly 46%.
+>
+> Same desk. Same router. Same environment.
+>
+> The difference was acquisition methodology.
 
 ---
 
