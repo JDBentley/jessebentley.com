@@ -11,8 +11,6 @@ showToc = true
 tocopen = false
 +++
 
-# The CSI Signal Problem Was Never the Environment — It Was My Firmware
-
 ## Background
 
 Several sessions ago I started collecting baseline CSI captures from my desk setup:
